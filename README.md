@@ -85,11 +85,12 @@ of accessing the pre-generated random samples in the memory.
 
 ## Python Implementation
 
-The [python](python) subdirectory has the latest python implementation, which is
+The [python](python) subdirectory has the latest Python implementation, which is
 still in active development. Contributions are welcome.
 
 ## Other Implementations
 
-There is a [javascript implementation](https://github.com/thlorenz/phe) using
-the same algorithm.
+[PHE](https://github.com/thlorenz/phe) is a Javascript port, developed by Thorsten Lorenz.
+
+[41Poker](https://github.com/41semicolon/41poker) is another Javascript port, developed by 41semicolon.
 
