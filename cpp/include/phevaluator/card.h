@@ -21,26 +21,32 @@
 
 #include <unordered_map>
 #include <string>
+#include <array>
 
 namespace phevaluator {
+const static std::unordered_map<char, int> rankMap = {
+  {'2', 0}, {'3', 1}, {'4', 2}, {'5', 3},
+  {'6', 4}, {'7', 5}, {'8', 6}, {'9', 7},
+  {'T', 8}, {'J', 9}, {'Q', 10}, {'K', 11}, {'A', 12},
+};
+const static std::unordered_map<char, int> suitMap = {
+  {'C', 0}, {'D', 1}, {'H', 2}, {'S', 3},
+  {'c', 0}, {'d', 1}, {'h', 2}, {'s', 3},
+};
+const static std::array<char, 13> rankReverseArray = {
+  '2', '3', '4', '5',
+  '6', '7', '8', '9',
+  'T', 'J', 'Q', 'K', 'A',
+};
+const static std::array<char, 4> suitReverseArray = { 'c', 'd', 'h', 's' };
 
 class Card {
- public:
+public:
   Card() {}
 
   Card(int id) : id_(id) {}
 
   Card(std::string name) {
-    const std::unordered_map<char, int> rankMap = {
-      {'2', 0}, {'3', 1}, {'4', 2}, {'5', 3},
-      {'6', 4}, {'7', 5}, {'8', 6}, {'9', 7},
-      {'T', 8}, {'J', 9}, {'Q', 10}, {'K', 11}, {'A', 12},
-    };
-    const std::unordered_map<char, int> suitMap = {
-      {'C', 0}, {'D', 1}, {'H', 2}, {'S', 3},
-      {'c', 0}, {'d', 1}, {'h', 2}, {'s', 3},
-    };
-
     if (name.length() < 2) {
       // TODO: throw an exception here
     }
@@ -50,9 +56,19 @@ class Card {
 
   Card(const char name[]) : Card(std::string(name)) {}
 
+  char describeRank(void) const { return rankReverseArray[id_ / 4]; }
+
+  char describeSuit(void) const { return suitReverseArray[id_ % 4]; }
+
+  std::string describeCard(void) const {
+    return std::string{ describeRank(), describeSuit() };
+  }
+
   operator int() const { return id_; }
 
- private:
+  operator std::string() const { return describeCard(); }
+
+private:
   int id_;
 };
 
