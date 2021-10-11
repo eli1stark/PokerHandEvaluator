@@ -85,8 +85,15 @@ of accessing the pre-generated random samples in the memory.
 
 ## Python Implementation
 
-The [python](python) subdirectory has the latest Python implementation, which is
-still in active development. Contributions are welcome.
+The [python](python) subdirectory has the latest Python implementation.
+
+Currently it supports 5-card, 6-card and 7-card poker hands evaluation, as well
+as Omaha poker hands evaluation.
+
+Thanks to the community for contributing to the Python implementations. Especially
+[azriel1rf](https://github.com/azriel1rf),
+[ohwi](https://github.com/ohwi),
+and [bensi94](https://github.com/bensi94).
 
 ## Other Implementations
 
