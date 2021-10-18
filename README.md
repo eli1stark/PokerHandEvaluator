@@ -96,6 +96,8 @@ You can install the library using `pip`:
 pip3 install phevaluator
 ```
 
+You can find more examples from [here](https://github.com/HenryRLee/PokerHandEvaluator/tree/master/python#using-the-library).
+
 Thanks to the community for contributing to the Python implementations. Especially
 [azriel1rf](https://github.com/azriel1rf),
 [ohwi](https://github.com/ohwi),
