@@ -90,6 +90,12 @@ The [python](python) subdirectory has the latest Python implementation.
 Currently it supports 5-card, 6-card and 7-card poker hands evaluation, as well
 as Omaha poker hands evaluation.
 
+You can install the library using `pip`:
+
+```
+pip3 install phevaluator
+```
+
 Thanks to the community for contributing to the Python implementations. Especially
 [azriel1rf](https://github.com/azriel1rf),
 [ohwi](https://github.com/ohwi),
