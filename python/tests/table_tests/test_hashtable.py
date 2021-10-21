@@ -9,8 +9,8 @@ class TestFlushTable(unittest.TestCase):
     VISIT = [0] * len(FLUSH)
     CUR_RANK = 1
 
-    CACHE = []
-    BINARIES = []
+    CACHE: list[int] = []
+    BINARIES: list[int] = []
 
     @classmethod
     def setUpClass(cls):
@@ -77,9 +77,9 @@ class TestFlushTable(unittest.TestCase):
         # k=6-9 cases
         pos_candidates = [i for i in range(13) if i not in base]
         for r in [1, 2, 3, 4]:  # Need to select additional cards
-            for cb in combinations(pos_candidates, r):
+            for comb in combinations(pos_candidates, r):
                 idx = base_idx
-                for pos in cb:
+                for pos in comb:
                     idx += 1 << pos
 
                 if cls.VISIT[idx] > 0:
