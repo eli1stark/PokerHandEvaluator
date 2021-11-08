@@ -1,6 +1,15 @@
 # C/C++ Library
 
-## Compile and test
+## Build and test
+
+The following intructions assumes you are in the [cpp](/cpp/) directory. If
+you are in the root directory, please change to [cpp](/cpp/) first.
+
+```
+cd cpp
+```
+
+### Build with CMake
 
 This library can be built using CMake. A recommended way of building it is:
 
@@ -14,13 +23,23 @@ make
 This will generate a static-linked library `libpheval.a`, as well as
 a unit test binary `unit_tests`.
 
-Run the `unit_tests` to perform the unit tests:
+Run `unit_tests` to perform the unit tests:
 
 ```
 ./unit_tests
 ```
 
-### Compile with zig
+Another build option is to build the library only, after generating the CMake files,
+run `make pheval` to build the static-linked library.
+
+```
+mkdir -p build
+cd build
+cmake ..
+make pheval
+```
+
+### Build with zig
 
 This library can also be build with zig which supports many platforms and cross compilation scenarios.  In order to do so, [install a zig compiler](https://github.com/ziglang/zig#installation) for your platform (minimum version 0.9) and run `zig build` with some combination of the following flags:
 
@@ -42,6 +61,21 @@ $ zig build -Domaha -Drelease-fast
 
 # create example executables in zig-out/bin/
 $ zig build examples
+```
+
+### Build with GNU Make
+
+This [cpp](/cpp/) directory also includes a Makefile, for users that want to use native
+GNU Make to compile the library.
+
+Simply run `make` to build the static-linked library `libpheval.a`.
+
+In the [examples](/cpp/examples), there is another Makefile to compile the examples
+with the library linked.
+
+```
+cd examples
+make
 ```
 
 ## Use the library
