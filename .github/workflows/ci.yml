@@ -58,7 +58,7 @@ jobs:
           zig build examples
           zig-out/bin/c_example
           # FIXME: zig-out/bin/cpp_example
-          zig-out/bin/omaha_example
+          # FIXME: zig-out/bin/omaha_example
   cpp_benchmark:
     name: C++ Benchmark
     runs-on: ubuntu-latest
