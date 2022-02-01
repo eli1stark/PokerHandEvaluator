@@ -109,6 +109,8 @@ and [bensi94](https://github.com/bensi94).
 
 [41Poker](https://github.com/41semicolon/41poker) is another Javascript port, developed by 41semicolon.
 
+[poker](https://pub.dev/packages/poker) is a Dart port, developed by Kohei.
+
 ## Awesome Use Cases
 
 ### A simple Hold'em pre-flop equity estimator
