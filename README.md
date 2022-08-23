@@ -111,6 +111,18 @@ and [bensi94](https://github.com/bensi94).
 
 [poker](https://pub.dev/packages/poker) is a Dart port, developed by Kohei.
 
+[ghais/poker](https://github.com/ghais/poker/blob/main/src/Poker/Holdem/Evaluate.hs) contains a Haskell implementation of the evaluator.
+
+[gophe](https://github.com/mattlangl/gophe) is a Go port, developed by mattlangl.
+
+[poker-handle](https://github.com/pocketberserker/poker-handle/tree/main/src/poker) has a TypeScript port, developed by pocketberserker.
+
+[PokerHandEvaluator.cs](https://github.com/travisstaloch/PokerHandEvaluator.cs) is a C# port, developed by travisstaloch.
+
+[poker_engine](https://github.com/aleo101/poker_engine) is a Rust port, developed by Alexander Leones.
+
+[Poker-Calculator](https://github.com/tryabin/Poker-Calculator) contains a CUDA implementation of this evaluator.
+
 ## Awesome Use Cases
 
 ### A simple Hold'em pre-flop equity estimator
