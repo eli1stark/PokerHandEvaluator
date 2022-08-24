@@ -3,6 +3,7 @@
 #include <array>
 #include <set>
 #include <chrono>
+#include <numeric>
 #include <random>
 #include "phevaluator/phevaluator.h"
 #include "benchmark/benchmark.h"
