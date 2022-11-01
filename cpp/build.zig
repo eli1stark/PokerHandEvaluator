@@ -33,7 +33,7 @@ pub fn build(b: *std.build.Builder) void {
     inline for (example_files) |example_file| {
         const exe = b.addExecutable(std.mem.trimRight(u8, example_file, ".c"), null);
         exe.addCSourceFiles(&.{"examples/" ++ example_file}, &.{});
-        exe.addIncludeDir("include");
+        exe.addIncludePath("include");
         const want_omaha = std.mem.startsWith(u8, example_file, "omaha");
         const deplib = if (!omaha and want_omaha) addStaticLib(b, mode, target, dynamic, true) else lib;
         exe.linkLibrary(deplib);
