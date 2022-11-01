@@ -94,7 +94,7 @@ fn addStaticLib(b: *std.build.Builder, mode: std.builtin.Mode, target: std.zig.C
         cpp_sources,
         &.{"-std=c++14"},
     );
-    lib.addIncludeDir("include");
+    lib.addIncludePath("include");
     lib.linkLibCpp();
 
     // TODO: test building on windows with msvc abi
