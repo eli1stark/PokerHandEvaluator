@@ -135,3 +135,10 @@ The source code can be found in [sim.cc](https://gist.github.com/bwasti/c2ca972c
 
 ![pre-flop equity estimator](https://i.redd.it/ibav59awmab71.jpg)
 
+## A Python example for Monte Carlo simulation
+
+An article about Monte Carlo simulation of Texas Hold'em.
+
+[Estimating the outcome of a Texas hold’em game using Monte Carlo simulation](https://petrosdemetrakopoulos.medium.com/estimating-the-outcome-of-a-texas-holdem-game-using-monte-carlo-simulation-1be35be29036)
+
+It's source code is in https://github.com/petrosDemetrakopoulos/TexasHoldemMonteCarloSimulation
