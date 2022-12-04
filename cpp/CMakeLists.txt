@@ -15,30 +15,21 @@ option(BUILD_EXAMPLES "Build examples ON/OFF" ON)
 # Add the PokerHandEvaluator library
 add_library(pheval STATIC
   src/dptables.c
-  src/tables_omaha.c
-  src/evaluator_omaha.c
-  src/evaluator_omaha.cc
-  src/evaluator.cc
   src/evaluator5.c
   src/evaluator6.c
   src/evaluator7.c
   src/hash.c
-  src/hand.cc
   src/hashtable.c
   src/hashtable5.c
   src/hashtable6.c
   src/hashtable7.c
-  src/rank.c
   src/7462.c
 )
 target_include_directories(pheval PUBLIC 
     $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
     $<INSTALL_INTERFACE:include/>)
 target_compile_options(pheval PUBLIC -O3)
-set(PUB_HEADERS include/phevaluator/phevaluator.h
-                include/phevaluator/card.h
-                include/phevaluator/hand.h
-                include/phevaluator/rank.h)
+set(PUB_HEADERS include/phevaluator/phevaluator.h)
 set_target_properties(pheval PROPERTIES
     VERSION ${PROJECT_VERSION}
     PUBLIC_HEADER "${PUB_HEADERS}")
@@ -64,9 +55,6 @@ if (BUILD_TESTS)
   FetchContent_MakeAvailable(googletest googlebenchmark)
 
   add_executable(unit_tests
-    test/evaluation.cc
-    test/evaluation_omaha.cc
-    test/rank.cc
     test/kev/fast_eval.c
     test/kev/kev_eval.c
   )
@@ -74,12 +62,6 @@ if (BUILD_TESTS)
   target_link_libraries(unit_tests gtest_main pheval)
 
   add_test(NAME unit_tests COMMAND unit_tests)
-
-  add_executable(benchmark_phevaluator
-    benchmark/benchmark.cc
-  )
-  target_compile_options(benchmark_phevaluator PUBLIC -O3)
-  target_link_libraries(benchmark_phevaluator benchmark pheval)
 endif()
 
 if (BUILD_EXAMPLES)
@@ -87,16 +69,6 @@ if (BUILD_EXAMPLES)
     examples/c_example.c
   )
   target_link_libraries(c_example pheval)
-
-  add_executable(cpp_example
-    examples/cpp_example.cc
-  )
-  target_link_libraries(cpp_example pheval)
-
-  add_executable(omaha_example
-    examples/omaha_example.cc
-  )
-  target_link_libraries(omaha_example pheval)
 endif()
 
 # Install library
